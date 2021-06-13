@@ -66,7 +66,7 @@ class _BalanceScreenState extends State<BalanceScreen> {
             body: ListView.builder(
               itemBuilder: (context, index) {
                 return TransferWidget(
-                    isItMe: true,
+                    icon: Icons.money,
                     tokenName: httpList[index].name,
                     tokenAmount: httpList[index].amount,
                     symbol: httpList[index].symbol);

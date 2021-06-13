@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:wallet_app/widgets/text_wigdet.dart';
 
 class TransferWidget extends StatelessWidget {
-  TransferWidget({required this.tokenName, required this.tokenAmount, required this.symbol, required this.isItMe});
+  TransferWidget({required this.tokenName, required this.tokenAmount, required this.symbol, required this.icon});
   final String tokenName;
   final String tokenAmount;
   final String symbol;
-  final bool isItMe;
+  final dynamic icon;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,10 +17,17 @@ class TransferWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(isItMe == true ? Icons.arrow_circle_down : Icons.arrow_circle_up),
-              TextWidget(
-                text: tokenName,
-                color: Colors.black54,
+              Row(
+                children: [
+                  Icon(icon),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  TextWidget(
+                    text: tokenName,
+                    color: Colors.black54,
+                  ),
+                ],
               ),
               Row(
                 children: [

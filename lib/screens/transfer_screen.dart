@@ -18,6 +18,7 @@ class _TransferScreenState extends State<TransferScreen> {
   List httpList = [];
   List tokenList = [];
   bool isLoading = true;
+//  bool isItMe;
 
   @override
   void initState() {
@@ -47,7 +48,9 @@ class _TransferScreenState extends State<TransferScreen> {
                   children: [
                     Expanded(
                       child: TransferWidget(
-                        isItMe: httpList[index].address == widget.address,
+                        icon: (httpList[index].address != widget.address)
+                            ? (Icons.arrow_circle_up)
+                            : (Icons.arrow_circle_down),
                         tokenName: httpList[index].name,
                         tokenAmount: httpList[index].amount,
                         symbol: httpList[index].symbol,
